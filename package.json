@@ -1,0 +1,23 @@
+{
+  "name": "account",
+  "version": "0.0.1",
+  "description": "origamicore account",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vahidHossaini/oriaccount.git"
+  },
+  "keywords": [
+    "origamicore",
+    "account"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vahidHossaini/oriaccount/issues"
+  },
+  "homepage": "https://github.com/vahidHossaini/oriaccount#readme"
+}
