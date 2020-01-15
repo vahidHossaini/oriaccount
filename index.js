@@ -25,6 +25,9 @@ module.exports = class accountConfig
   {
     this.config=config.statics
     this.context=this.config.context 
+    this.bootstrap=require('./bootstrap.js')
+    this.enums=require('./struct.js') 
+    this.tempConfig=require('./config.js')
     global.acc=new accountManager(dist)
   }
   async getAccount(msg,func,self)

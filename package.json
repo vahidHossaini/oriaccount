@@ -1,6 +1,6 @@
 {
-  "name": "account",
-  "version": "0.0.1",
+  "name": "oriaccount",
+  "version": "0.0.2",
   "description": "origamicore account",
   "main": "index.js",
   "scripts": {
