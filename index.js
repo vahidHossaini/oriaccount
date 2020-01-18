@@ -5,6 +5,10 @@ class accountManager
   {
       this.disc=disc
   }
+  existAccount(data,func)
+  {
+    return this.disc.run('account','existAccount',{data:{id:id}},func)  
+  }
   get(id,func)
   {
     return this.disc.run('account','getAccount',{data:{id:id}},func)
@@ -30,7 +34,13 @@ module.exports = class accountConfig
     this.tempConfig=require('./config.js')
     global.acc=new accountManager(dist)
   }
-  async getAccount(msg,func,self)
+  async existAccount(msg,func,self)
+  {
+    var dt=msg.data
+    var acc =await global.db.Search(self.context,'account',{ },dt)
+    return func(null,acc)
+  }
+  sync getAccount(msg,func,self)
   {
     var dt=msg.data
     var acc =await global.db.SearchOne(self.context,'account',{where:{id:dt.id}},{})

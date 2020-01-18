@@ -3,6 +3,9 @@ module.exports = class paymentBootstrap{
   {
     this.funcs=[
       {
+          name:'existAccount'
+      },
+      {
           name:'test',
           title1:'test' ,
           inputs:[
