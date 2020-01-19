@@ -7,7 +7,7 @@ class accountManager
   }
   existAccount(data,func)
   {
-    return this.disc.run('account','existAccount',{data:{id:id}},func)  
+    return this.disc.run('account','existAccount',{data:data},func)  
   }
   get(id,func)
   {
@@ -40,7 +40,7 @@ module.exports = class accountConfig
     var acc =await global.db.Search(self.context,'account',{ },dt)
     return func(null,acc)
   }
-  sync getAccount(msg,func,self)
+  async getAccount(msg,func,self)
   {
     var dt=msg.data
     var acc =await global.db.SearchOne(self.context,'account',{where:{id:dt.id}},{})
@@ -64,8 +64,12 @@ module.exports = class accountConfig
   async updateData(msg,func,self)
   {
     var dt=msg.data
-    if(!dt.value)
+	if(dt.value === null || typeof dt.value === "undefined")
+	{
       return func({m:'account003'})
+	}
+    //if(!dt.value)
+    //  return func({m:'account003'})
     var acc =await global.db.SearchOne(self.context,'account',{where:{id:dt.id}},{})
     if(!acc)
       return func({m:'account004'})
