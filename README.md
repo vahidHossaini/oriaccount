@@ -2,8 +2,7 @@
 This module creates and manages centralized user data.
 Services is not public and Internal used.
 # Install
-
-[Use Oricli](https://www.npmjs.com/package/oricli)
+- origamicore [Doc](https://github.com/vahidHossaini/origami#readme)
 # Configuration
  
     {
